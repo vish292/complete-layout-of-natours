@@ -1,0 +1,143 @@
+.navigation {
+    &-toggle {
+        background-color: $color-white;
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        position: fixed;
+        top: 4rem;
+        right: 4rem;
+        z-index: 100;
+        box-shadow: 0 1rem 3rem rgba($color-dark, .1);
+        cursor: pointer;
+        text-align: center;
+    }
+
+    &-icon {
+        width: 3rem;
+        height: .2rem;
+        background-color: $color-dark;
+        display: inline-block;
+        margin-top: calc(3.5rem - 1px);
+        position: relative;
+
+        &::after,
+        &::before {
+            content: "";
+            width: 3rem;
+            height: .2rem;
+            position: absolute;
+            background-color: $color-grey-dark;
+            // top:.8rem;
+            left: 0;
+            transition: all 0.3s;
+        }
+
+        &::before {
+            top: -.8rem;
+
+
+        }
+
+        &::after {
+            top: .8rem
+        }
+    }
+
+    &-background {
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        background-image: linear-gradient($color-primary-light, $color-primary-dark);
+        top: 4.5rem;
+        right: 4.5rem;
+        z-index: 50;
+        transition: all .8s cubic-bezier(0.77, 0, 0.175, 1);
+        position: fixed;
+    }
+
+    &-nav {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 0;
+        height: 100vh;
+        text-align: center;
+        z-index: 80;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    &-list {
+        list-style: none;
+    }
+
+    &-item {
+        margin: 1rem;
+    }
+
+    &-link {
+
+        &:link,
+        &:visited {
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 3rem;
+            font-weight: 300;
+            color: $color-white;
+            padding: 1rem 2rem;
+            background-image: linear-gradient(120deg,  transparent 50%, $color-white 50%);
+            background-size: 225%;
+            transition: all 0.4s ease-in-out;
+
+            span {
+                display: inline-block;
+                margin-right: 1.5rem;
+            }
+
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-position: 100%;
+            color: $color-primary-dark;
+            font-weight: 700;
+            // transform: translatex(1rem);
+            //  background-color: $color-white;
+        }
+    }
+
+    &.active {
+        .navigation-background {
+            transform: scale(80);
+        }
+
+        .navigation-nav {
+            left: 0%;
+            opacity: 1;
+            width: 100vw;
+        }
+
+        .navigation-icon {
+            // display: none;
+            background-color: transparent;
+
+            &::before {
+                transform: rotate(135deg);
+                top: 0;
+            }
+
+            &::after {
+                transform: rotate(-135deg);
+                top: 0;
+
+
+            }
+        }
+    }
+}

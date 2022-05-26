@@ -1,0 +1,17 @@
+@mixin clearfix {
+    width:100%;
+    display:table;
+    clear:both;
+}
+@mixin tocenter{
+             position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+}
+@mixin backgroundclip{
+    background-image: linear-gradient(to right,$color-primary-light,$color-primary-dark);
+     -webkit-background-clip: text;
+     background-clip:text;
+    color:transparent;
+}

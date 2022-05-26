@@ -1,0 +1,33 @@
+
+
+// colors :
+// lightGreen :#7ed56f;
+// mediumGreen:#55c57a;
+// DarkGreen :#28b485;
+@import "./abstract/variable";
+@import "./abstract/mixins";
+@import "./abstract/functions";
+@import "./base/animations";
+@import "./base/base";
+@import "./base/typography";
+@import "./base/utilities";
+
+
+@import "./componant/buttons";
+@import"./componant/composition";
+@import"./componant/feature-box";
+@import"./componant/card";
+@import"./componant/bg-video";
+@import"./componant/story";
+@import"./componant/form";
+
+@import "./layout/grids";
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/navigation";
+
+@import"./pages/home";
+
+
+
+
